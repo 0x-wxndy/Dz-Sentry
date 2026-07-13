@@ -1,0 +1,137 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Algiers metro",
+        "layer": "economic",
+        "risk": "green",
+        "score": 32,
+        "note": "Administrative & services hub — stable indicators"
+      },
+      "geometry": { "type": "Point", "coordinates": [3.0588, 36.7538] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Oran industrial belt",
+        "layer": "economic",
+        "risk": "yellow",
+        "score": 48,
+        "note": "FDI interest with permitting backlog"
+      },
+      "geometry": { "type": "Point", "coordinates": [-0.6417, 35.6969] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Hassi R'Mel",
+        "layer": "legal",
+        "risk": "green",
+        "score": 28,
+        "note": "Core gas infrastructure — regulatory clarity high"
+      },
+      "geometry": { "type": "Point", "coordinates": [3.25, 32.93] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Skikda LNG",
+        "layer": "economic",
+        "risk": "yellow",
+        "score": 52,
+        "note": "Export corridor insurance premiums elevated"
+      },
+      "geometry": { "type": "Point", "coordinates": [6.9063, 36.8663] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "High Plateaus agri",
+        "layer": "economic",
+        "risk": "red",
+        "score": 71,
+        "note": "Drought anomaly — cereal / livestock stress"
+      },
+      "geometry": { "type": "Point", "coordinates": [5.4, 36.15] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Tamanrasset corridor",
+        "layer": "security",
+        "risk": "red",
+        "score": 74,
+        "note": "Border incident cluster — trafficking pressure"
+      },
+      "geometry": { "type": "Point", "coordinates": [5.5228, 22.785] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Illizi approaches",
+        "layer": "security",
+        "risk": "yellow",
+        "score": 58,
+        "note": "Sahel spillover monitoring"
+      },
+      "geometry": { "type": "Point", "coordinates": [8.4667, 26.4833] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Adrar desert routes",
+        "layer": "security",
+        "risk": "yellow",
+        "score": 55,
+        "note": "Displacement / informal flow indicators"
+      },
+      "geometry": { "type": "Point", "coordinates": [-0.2939, 27.8742] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Classified Node Alpha",
+        "layer": "classified",
+        "risk": "red",
+        "score": 81,
+        "note": "SOVEREIGN ONLY — dummy classified layer for demo narrative"
+      },
+      "geometry": { "type": "Point", "coordinates": [4.2, 28.5] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Classified Node Beta",
+        "layer": "classified",
+        "risk": "yellow",
+        "score": 63,
+        "note": "SOVEREIGN ONLY — sensitivity overlay (sample)"
+      },
+      "geometry": { "type": "Point", "coordinates": [1.8, 34.1] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Annaba port legal zone",
+        "layer": "legal",
+        "risk": "green",
+        "score": 35,
+        "note": "Customs / free-zone regulatory sample"
+      },
+      "geometry": { "type": "Point", "coordinates": [7.7667, 36.9] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Ouargla hydrocarbons legal",
+        "layer": "legal",
+        "risk": "yellow",
+        "score": 44,
+        "note": "Concession / local content diligence flags"
+      },
+      "geometry": { "type": "Point", "coordinates": [5.325, 31.95] }
+    }
+  ]
+}

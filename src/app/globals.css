@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --ink-950: #070b14;
+  --ink-900: #0c1220;
+  --panel: #111827cc;
+  --amber: #f59e0b;
+  --risk-green: #7fd99a;
+  --risk-yellow: #e6c07b;
+  --risk-red: #f07178;
+  --background: #070b14;
+  --foreground: #e2e8f0;
+}
+
+body {
+  color: var(--foreground);
+  background:
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(245, 158, 11, 0.08), transparent),
+    radial-gradient(ellipse 60% 40% at 90% 10%, rgba(45, 212, 191, 0.05), transparent),
+    linear-gradient(180deg, #070b14 0%, #0a1020 40%, #070b14 100%);
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+/* subtle grid atmosphere */
+body::before {
+  content: "";
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(148, 163, 184, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148, 163, 184, 0.03) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse at center, black 20%, transparent 75%);
+  z-index: 0;
+}
+
+body > * {
+  position: relative;
+  z-index: 1;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .font-display {
+    font-family: var(--font-display), var(--font-plex), sans-serif;
+  }
+  .font-mono {
+    font-family: var(--font-plex-mono), ui-monospace, monospace;
+  }
+}
+
+/* Arabic: prefer Noto Sans Arabic for body + display readability */
+html.font-ar body,
+body.font-ar,
+.font-ar {
+  font-family: var(--font-arabic), var(--font-plex), system-ui, sans-serif;
+}
+
+.font-ar .font-display {
+  font-family: var(--font-arabic), var(--font-display), sans-serif;
+}
+
+[dir="rtl"] .tracking-\[0\.25em\] {
+  letter-spacing: 0.08em;
+}
+
+/* Leaflet dark tweaks */
+.map-dark .leaflet-container {
+  font-family: var(--font-plex), sans-serif;
+  background: #0b1220;
+}
+
+.map-dark .leaflet-popup-content-wrapper {
+  background: #0f172a;
+  color: #e2e8f0;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.map-dark .leaflet-popup-tip {
+  background: #0f172a;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.25);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}

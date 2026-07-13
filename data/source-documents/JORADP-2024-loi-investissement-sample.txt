@@ -1,0 +1,16 @@
+RÉPUBLIQUE ALGÉRIENNE DÉMOCRATIQUE ET POPULAIRE
+JOURNAL OFFICIEL — EXTRAIT ÉCHANTILLON (DEMO)
+
+Loi n° 22-18 relative à l'investissement (extrait synthétique à des fins de démonstration DZ-Sentry)
+
+Article 1er. — La présente loi a pour objet de définir le régime applicable à l'investissement réalisé en activités économiques de production de biens et services.
+
+Article 3. — Sont éligibles aux avantages prévus les investissements portant sur les secteurs stratégiques, notamment l'énergie, l'industrie manufacturière, l'agriculture et les technologies de l'information, sous réserve du respect des conditions de contenu local.
+
+Article 7. — L'Agence algérienne de promotion de l'investissement assure l'enregistrement des projets et le suivi des engagements de l'investisseur en matière d'emploi et de formation.
+
+Article 12. — Les avantages fiscaux peuvent comprendre l'exonération temporaire de l'impôt sur les bénéfices des sociétés et de la taxe sur l'activité professionnelle, dans les limites fixées par voie réglementaire.
+
+Article 18. — En cas de manquement grave aux engagements, l'administration peut procéder au retrait des avantages après mise en demeure.
+
+NOTE: Texte d'échantillon pour pipeline RAG du prototype — ne constitue pas une publication officielle.
