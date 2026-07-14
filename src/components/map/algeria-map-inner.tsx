@@ -12,7 +12,7 @@ function colorFor(risk?: string) {
 
 export default function AlgeriaMapInner({ data }: { data: FeatureCollection }) {
   return (
-    <div className="h-[480px] rounded-md overflow-hidden border border-white/10 map-dark">
+    <div className="h-64 sm:h-80 lg:h-[480px] rounded-md overflow-hidden border border-white/10 map-dark">
       <MapContainer
         center={[28.0, 2.5]}
         zoom={5}

@@ -59,12 +59,26 @@ Copy `.env.example` → `.env.local`:
    ```bash
    LLM_PROVIDER=gemini
    GEMINI_API_KEY=your_key_here
-   GEMINI_MODEL=gemini-2.0-flash
+   GEMINI_MODEL=gemini-flash-latest
    ```
 3. Restart `npm run dev`
 4. Open **Semantic Search** → enter a query → **Synthesize answer**
 
 Claude alternative: set `ANTHROPIC_API_KEY` (and optionally `LLM_PROVIDER=anthropic`).
+
+### Netlify
+
+`.env.local` is **not** deployed. Set the same vars in  
+**Site configuration → Environment variables** (scope: **Functions** / **Runtime**), then **trigger a new deploy**:
+
+| Variable | Example |
+|----------|---------|
+| `LLM_PROVIDER` | `gemini` |
+| `GEMINI_API_KEY` | your key |
+| `GEMINI_MODEL` | `gemini-flash-latest` |
+
+Do **not** use `gemini-2.5-flash` / `gemini-2.0-flash` on free-tier keys (404 / 429).  
+After changing env vars, redeploy or the old process keeps empty/`undefined` keys.
 
 ### Supabase
 

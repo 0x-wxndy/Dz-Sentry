@@ -24,6 +24,54 @@ body {
   min-height: 100vh;
 }
 
+html.theme-light {
+  --background: #f4f6fa;
+  --foreground: #0f172a;
+  --ink-950: #f4f6fa;
+  --ink-900: #eef2f7;
+  --panel: #ffffffee;
+}
+
+html.theme-light body {
+  color: #0f172a;
+  background:
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(245, 158, 11, 0.12), transparent),
+    linear-gradient(180deg, #f8fafc 0%, #eef2f7 50%, #f8fafc 100%);
+}
+
+html.theme-light .bg-ink-950 {
+  background-color: #f4f6fa !important;
+}
+html.theme-light .bg-ink-900\/80,
+html.theme-light .bg-ink-900\/40,
+html.theme-light .bg-ink-900 {
+  background-color: rgba(255, 255, 255, 0.92) !important;
+}
+html.theme-light .text-slate-100,
+html.theme-light .text-slate-50 {
+  color: #0f172a !important;
+}
+html.theme-light .text-slate-400,
+html.theme-light .text-slate-500,
+html.theme-light .text-slate-300 {
+  color: #475569 !important;
+}
+html.theme-light .border-white\/10,
+html.theme-light .border-white\/15,
+html.theme-light .border-white\/8 {
+  border-color: rgba(15, 23, 42, 0.1) !important;
+}
+html.theme-light .bg-white\/5,
+html.theme-light .hover\:bg-white\/5:hover,
+html.theme-light .hover\:bg-white\/10:hover {
+  background-color: rgba(15, 23, 42, 0.04) !important;
+}
+html.theme-light .bg-ink-950\/50,
+html.theme-light .bg-ink-950\/60,
+html.theme-light .bg-ink-950\/40 {
+  background-color: rgba(241, 245, 249, 0.9) !important;
+}
+
 /* subtle grid atmosphere */
 body::before {
   content: "";

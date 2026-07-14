@@ -82,7 +82,13 @@ async function synthesizeWithGemini(prompt: string): Promise<string> {
   let lastError: unknown;
   const tried: string[] = [];
 
-  for (const modelName of geminiModelsToTry()) {
+  // On serverless (Netlify), keep the chain short to stay under function timeouts.
+  const models = geminiModelsToTry().slice(
+    0,
+    process.env.NETLIFY || process.env.AWS_LAMBDA_FUNCTION_NAME ? 2 : undefined
+  );
+
+  for (const modelName of models) {
     try {
       const model = genAI.getGenerativeModel({ model: modelName });
       const result = await model.generateContent(prompt);
@@ -91,7 +97,6 @@ async function synthesizeWithGemini(prompt: string): Promise<string> {
       lastError = err;
       tried.push(modelName);
       const msg = err instanceof Error ? err.message : String(err);
-      // Continue on quota or model-unavailable; stop on auth errors
       if (msg.includes("API_KEY") || msg.includes("401") || msg.includes("403")) {
         throw err;
       }
@@ -166,17 +171,23 @@ export async function synthesizeAnswer(
   } catch (err) {
     const msg = err instanceof Error ? err.message : String(err);
     const quota = isQuotaError(err) || msg.includes("429") || msg.includes("quota");
+    const short = msg
+      .replace(/key=[^\s&]+/gi, "key=***")
+      .replace(/AIza[^\s]+/g, "***")
+      .replace(/AQ\.[^\s]+/g, "***")
+      .slice(0, 160);
+
     const warning = quota
       ? locale === "ar"
-        ? "تم تجاوز حصة Gemini (429). عُرض توليف محلي. جرّب لاحقًا أو فعّل الفوترة."
+        ? `تم تجاوز حصة Gemini (429). عُرض توليف محلي. ${short}`
         : locale === "fr"
-          ? "Quota Gemini dépassé (429). Synthèse locale de secours."
-          : "Gemini quota exceeded (429). Showing local fallback synthesis."
+          ? `Quota Gemini dépassé (429). Synthèse locale. ${short}`
+          : `Gemini quota exceeded (429). Local fallback. ${short}`
       : locale === "ar"
-        ? `تعذّر الاتصال بالنموذج. عُرض توليف محلي.`
+        ? `تعذّر الاتصال بالنموذج. عُرض توليف محلي. ${short}`
         : locale === "fr"
-          ? "Échec d'appel LLM. Synthèse locale de secours."
-          : "LLM call failed. Showing local fallback synthesis.";
+          ? `Échec d'appel LLM. Synthèse locale de secours. ${short}`
+          : `LLM call failed. Local fallback. ${short}`;
 
     console.error("[synthesizeAnswer]", msg);
     return {

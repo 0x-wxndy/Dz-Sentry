@@ -11,6 +11,9 @@ export type Dictionary = {
   nav: {
     dashboard: string;
     search: string;
+    laws: string;
+    experts: string;
+    settings: string;
     scenarios: string;
     matrix: string;
     admin: string;
@@ -37,6 +40,12 @@ export type Dictionary = {
     subtitle: string;
     demoSession: string;
     demoSessionDesc: string;
+    email: string;
+    password: string;
+    signIn: string;
+    quickPick: string;
+    autofillHint: string;
+    invalidCreds: string;
     phase2: string;
   };
   dashboard: {
@@ -127,6 +136,100 @@ export type Dictionary = {
     approve: string;
     saveEdit: string;
   };
+  laws: {
+    title: string;
+    subtitle: string;
+    searchPlaceholder: string;
+    filterAll: string;
+    filterInvestment: string;
+    filterTax: string;
+    filterTrade: string;
+    filterEnergy: string;
+    typeLaw: string;
+    typeDecree: string;
+    typeOrdinance: string;
+    readMore: string;
+    save: string;
+    empty: string;
+  };
+  experts: {
+    title: string;
+    subtitle: string;
+    searchPlaceholder: string;
+    fieldAll: string;
+    fieldEconomy: string;
+    fieldBusiness: string;
+    fieldEducation: string;
+    fieldEngineering: string;
+    fieldFinance: string;
+    fieldLaw: string;
+    fieldMedicine: string;
+    fieldTechnology: string;
+    years: string;
+    free: string;
+    paid: string;
+    contact: string;
+    contactTitle: string;
+    messageLabel: string;
+    messagePlaceholder: string;
+    send: string;
+    sent: string;
+    empty: string;
+    contactLocked: string;
+  };
+  pricing: {
+    title: string;
+    subtitle: string;
+    monthly: string;
+    yearly: string;
+    saveYearly: string;
+    perMonth: string;
+    perYear: string;
+    recommended: string;
+    subscribe: string;
+    currentPlan: string;
+    processing: string;
+    activated: string;
+    payError: string;
+    demoPayNote: string;
+    upgradeHint: string;
+    starter: string;
+    professionnel: string;
+    premium: string;
+    starterBlurb: string;
+    professionnelBlurb: string;
+    premiumBlurb: string;
+    featDashboard: string;
+    featSearch: string;
+    featLaws: string;
+    featExpertsView: string;
+    featExpertsContact: string;
+    featScenarios: string;
+    featMatrix: string;
+    featClassified: string;
+    featAdmin: string;
+    featSupport: string;
+    featSeats: string;
+  };
+  settings: {
+    title: string;
+    subtitle: string;
+    tabGeneral: string;
+    tabBilling: string;
+    themeTitle: string;
+    themeDesc: string;
+    themeDark: string;
+    themeLight: string;
+    languageTitle: string;
+    languageDesc: string;
+    densityTitle: string;
+    densityDesc: string;
+    densityComfortable: string;
+    densityCompact: string;
+    comingSoon: string;
+    billingTitle: string;
+    billingDesc: string;
+  };
   language: string;
 };
 
@@ -141,6 +244,9 @@ const en: Dictionary = {
   nav: {
     dashboard: "Dashboard",
     search: "Semantic Search",
+    laws: "Laws",
+    experts: "Experts",
+    settings: "Settings",
     scenarios: "What-If",
     matrix: "Cross-Impact",
     admin: "Admin CMS",
@@ -165,10 +271,16 @@ const en: Dictionary = {
   },
   login: {
     subtitle:
-      "Strategic intelligence briefing prototype for Algeria. Select a demo clearance to explore RBAC-gated modules.",
-    demoSession: "Demo session",
+      "Strategic intelligence briefing prototype for Algeria. Use a demo account below — credentials autofill for testing.",
+    demoSession: "Demo login",
     demoSessionDesc:
-      "Cookie-based roles | swap to Supabase Auth when credentials are set",
+      "Pick a test persona to autofill email & password, then sign in",
+    email: "Email",
+    password: "Password",
+    signIn: "Sign in",
+    quickPick: "Quick-fill test roles",
+    autofillHint: "Click a role to fill the form",
+    invalidCreds: "Unknown demo credentials. Use a quick-fill role.",
     phase2:
       "Phase 2 roadmap (not in this build): trained ML models, Delphi expert panel, microservices, enterprise vector DB, hardware MFA / legal certification, WebSocket infra.",
   },
@@ -274,6 +386,102 @@ const en: Dictionary = {
     approve: "Approve → live",
     saveEdit: "Save edit & approve",
   },
+  laws: {
+    title: "Laws & Regulations",
+    subtitle: "Search investment-related laws and decrees",
+    searchPlaceholder: "Search for a law…",
+    filterAll: "All",
+    filterInvestment: "Investment laws",
+    filterTax: "Tax laws",
+    filterTrade: "Trade laws",
+    filterEnergy: "Energy laws",
+    typeLaw: "Law",
+    typeDecree: "Decree",
+    typeOrdinance: "Ordinance",
+    readMore: "Read more",
+    save: "Save",
+    empty: "No laws match your filters.",
+  },
+  experts: {
+    title: "Experts",
+    subtitle: "Consult with experts in various fields",
+    searchPlaceholder: "Search for an expert…",
+    fieldAll: "All",
+    fieldEconomy: "Economy",
+    fieldBusiness: "Business",
+    fieldEducation: "Education",
+    fieldEngineering: "Engineering",
+    fieldFinance: "Finance",
+    fieldLaw: "Law",
+    fieldMedicine: "Medicine",
+    fieldTechnology: "Technology",
+    years: "+{n} years",
+    free: "Free",
+    paid: "Paid",
+    contact: "Contact",
+    contactTitle: "Request a consultation",
+    messageLabel: "Message",
+    messagePlaceholder: "Describe your briefing need…",
+    send: "Send request",
+    sent: "Request recorded (demo). The expert will be notified.",
+    empty: "No experts in this field yet.",
+    contactLocked:
+      "Expert contact requires Professionnel or Premium. Upgrade under Settings → Plan & billing.",
+  },
+  pricing: {
+    title: "Plan & billing",
+    subtitle: "Choose a self-serve access tier for this demo.",
+    monthly: "Monthly",
+    yearly: "Yearly",
+    saveYearly: "−2 mo",
+    perMonth: "/ month · excl. tax",
+    perYear: "/ year · excl. tax",
+    recommended: "Recommended",
+    subscribe: "Subscribe (demo pay)",
+    currentPlan: "Current plan",
+    processing: "Processing…",
+    activated: "Plan {plan} activated (demo payment).",
+    payError: "Payment could not be completed.",
+    demoPayNote:
+      "Demo checkout only — no real card charge. Ready to wire CIB / Stripe later for production.",
+    upgradeHint: "Upgrade plan",
+    starter: "Starter",
+    professionnel: "Professionnel",
+    premium: "Premium",
+    starterBlurb: "Individual analyst — core dashboard & legal catalogue",
+    professionnelBlurb: "Teams — scenarios, expert contact, priority support",
+    premiumBlurb: "Enterprise — classified layer, admin CMS, larger seat pack",
+    featDashboard: "Operations dashboard & live feed",
+    featSearch: "Semantic search (RAG)",
+    featLaws: "Laws & regulations catalogue",
+    featExpertsView: "Experts directory",
+    featExpertsContact: "Contact / consultation requests",
+    featScenarios: "What-If scenario builder",
+    featMatrix: "Cross-impact matrix",
+    featClassified: "Classified map layer",
+    featAdmin: "Admin CMS & ingestion",
+    featSupport: "Priority briefing support",
+    featSeats: "Up to {n} seats",
+  },
+  settings: {
+    title: "Settings",
+    subtitle: "Theme, language, and plan & billing for this demo workspace.",
+    tabGeneral: "General",
+    tabBilling: "Plan & billing",
+    themeTitle: "Theme",
+    themeDesc: "Situation-room dark is default; light for bright environments.",
+    themeDark: "Dark",
+    themeLight: "Light",
+    languageTitle: "Language",
+    languageDesc: "Interface language (Arabic uses RTL).",
+    densityTitle: "Density",
+    densityDesc: "Control spacing in lists and cards.",
+    densityComfortable: "Comfortable",
+    densityCompact: "Compact",
+    comingSoon: "Compact mode coming in a later build.",
+    billingTitle: "Plan & billing",
+    billingDesc: "Manage your subscription tier and demo payment.",
+  },
   language: "Language",
 };
 
@@ -288,6 +496,9 @@ const fr: Dictionary = {
   nav: {
     dashboard: "Tableau de bord",
     search: "Recherche sémantique",
+    laws: "Lois",
+    experts: "Experts",
+    settings: "Paramètres",
     scenarios: "Scénarios",
     matrix: "Impacts croisés",
     admin: "Admin CMS",
@@ -312,10 +523,16 @@ const fr: Dictionary = {
   },
   login: {
     subtitle:
-      "Prototype de briefing en renseignement stratégique pour l'Algérie. Choisissez une habilitation démo pour explorer les modules RBAC.",
-    demoSession: "Session démo",
+      "Prototype de briefing en renseignement stratégique pour l'Algérie. Utilisez un compte démo — identifiants préremplis pour les tests.",
+    demoSession: "Connexion démo",
     demoSessionDesc:
-      "Rôles par cookie | basculer vers Supabase Auth lorsque les clés sont configurées",
+      "Choisissez un persona test pour remplir email & mot de passe, puis connectez-vous",
+    email: "E-mail",
+    password: "Mot de passe",
+    signIn: "Se connecter",
+    quickPick: "Rôles test (remplissage auto)",
+    autofillHint: "Cliquez un rôle pour remplir le formulaire",
+    invalidCreds: "Identifiants démo inconnus. Utilisez un rôle rapide.",
     phase2:
       "Feuille de route Phase 2 (hors périmètre) : modèles ML entraînés, panel Delphi, microservices, base vectorielle entreprise, MFA matériel / certification juridique, infra WebSocket.",
   },
@@ -421,6 +638,102 @@ const fr: Dictionary = {
     approve: "Approuver → en ligne",
     saveEdit: "Enregistrer l'édition & approuver",
   },
+  laws: {
+    title: "Lois & réglementations",
+    subtitle: "Rechercher les lois et décrets liés à l'investissement",
+    searchPlaceholder: "Rechercher une loi…",
+    filterAll: "Toutes",
+    filterInvestment: "Lois d'investissement",
+    filterTax: "Lois fiscales",
+    filterTrade: "Lois commerciales",
+    filterEnergy: "Lois énergie",
+    typeLaw: "Loi",
+    typeDecree: "Décret",
+    typeOrdinance: "Ordonnance",
+    readMore: "Lire plus",
+    save: "Enregistrer",
+    empty: "Aucune loi ne correspond à vos filtres.",
+  },
+  experts: {
+    title: "Experts",
+    subtitle: "Consultez des experts dans divers domaines",
+    searchPlaceholder: "Rechercher un expert…",
+    fieldAll: "Tous",
+    fieldEconomy: "Économie",
+    fieldBusiness: "Affaires",
+    fieldEducation: "Éducation",
+    fieldEngineering: "Ingénierie",
+    fieldFinance: "Finance",
+    fieldLaw: "Droit",
+    fieldMedicine: "Médecine",
+    fieldTechnology: "Technologie",
+    years: "+{n} ans",
+    free: "Gratuit",
+    paid: "Payant",
+    contact: "Contacter",
+    contactTitle: "Demander une consultation",
+    messageLabel: "Message",
+    messagePlaceholder: "Décrivez votre besoin de briefing…",
+    send: "Envoyer la demande",
+    sent: "Demande enregistrée (démo). L'expert sera notifié.",
+    empty: "Aucun expert dans ce domaine pour l'instant.",
+    contactLocked:
+      "Le contact expert nécessite Professionnel ou Premium. Passez par Paramètres → Offre & facturation.",
+  },
+  pricing: {
+    title: "Offre & facturation",
+    subtitle: "Choisissez un palier d'accès self-serve pour cette démo.",
+    monthly: "Mensuel",
+    yearly: "Annuel",
+    saveYearly: "−2 mois",
+    perMonth: "/ mois · HT",
+    perYear: "/ an · HT",
+    recommended: "Recommandé",
+    subscribe: "S'abonner (paiement démo)",
+    currentPlan: "Offre actuelle",
+    processing: "Traitement…",
+    activated: "Offre {plan} activée (paiement démo).",
+    payError: "Paiement impossible.",
+    demoPayNote:
+      "Checkout démo uniquement — pas de carte réelle. Prêt pour CIB / Stripe en production.",
+    upgradeHint: "Surclasser l'offre",
+    starter: "Starter",
+    professionnel: "Professionnel",
+    premium: "Premium",
+    starterBlurb: "Analyste individuel — tableau de bord & catalogue juridique",
+    professionnelBlurb: "Équipes — scénarios, contact experts, support prioritaire",
+    premiumBlurb: "Entreprise — couche classifiée, CMS admin, pack de sièges",
+    featDashboard: "Tableau de bord & flux live",
+    featSearch: "Recherche sémantique (RAG)",
+    featLaws: "Catalogue lois & réglementations",
+    featExpertsView: "Annuaire d'experts",
+    featExpertsContact: "Contact / demandes de consultation",
+    featScenarios: "Constructeur de scénarios",
+    featMatrix: "Matrice d'impacts croisés",
+    featClassified: "Couche carte classifiée",
+    featAdmin: "CMS admin & ingestion",
+    featSupport: "Support briefing prioritaire",
+    featSeats: "Jusqu'à {n} sièges",
+  },
+  settings: {
+    title: "Paramètres",
+    subtitle: "Thème, langue, et offre & facturation pour cet espace démo.",
+    tabGeneral: "Général",
+    tabBilling: "Offre & facturation",
+    themeTitle: "Thème",
+    themeDesc: "Sombre salle de situation par défaut ; clair pour environnements lumineux.",
+    themeDark: "Sombre",
+    themeLight: "Clair",
+    languageTitle: "Langue",
+    languageDesc: "Langue de l'interface (l'arabe active le RTL).",
+    densityTitle: "Densité",
+    densityDesc: "Espacement des listes et cartes.",
+    densityComfortable: "Confortable",
+    densityCompact: "Compact",
+    comingSoon: "Mode compact dans une version ultérieure.",
+    billingTitle: "Offre & facturation",
+    billingDesc: "Gérez votre palier d'abonnement et le paiement démo.",
+  },
   language: "Langue",
 };
 
@@ -435,6 +748,9 @@ const ar: Dictionary = {
   nav: {
     dashboard: "لوحة القيادة",
     search: "البحث الدلالي",
+    laws: "القوانين",
+    experts: "الخبراء",
+    settings: "الإعدادات",
     scenarios: "ماذا لو",
     matrix: "التأثيرات المتقاطعة",
     admin: "إدارة المحتوى",
@@ -459,10 +775,16 @@ const ar: Dictionary = {
   },
   login: {
     subtitle:
-      "نموذج أولي لإحاطة استخباراتية استراتيجية للسوق الجزائرية. اختر مستوى صلاحية تجريبي لاستكشاف الوحدات المقيدة.",
-    demoSession: "جلسة تجريبية",
+      "نموذج أولي لإحاطة استخباراتية استراتيجية للسوق الجزائرية. استخدم حسابًا تجريبيًا — تُملأ بيانات الدخول تلقائيًا للاختبار.",
+    demoSession: "تسجيل دخول تجريبي",
     demoSessionDesc:
-      "أدوار عبر ملفات تعريف الارتباط | يمكن الانتقال إلى Supabase Auth عند توفر المفاتيح",
+      "اختر شخصية اختبار لملء البريد وكلمة المرور، ثم سجّل الدخول",
+    email: "البريد الإلكتروني",
+    password: "كلمة المرور",
+    signIn: "تسجيل الدخول",
+    quickPick: "أدوار اختبار (تعبئة تلقائية)",
+    autofillHint: "انقر دورًا لملء النموذج",
+    invalidCreds: "بيانات تجريبية غير معروفة. استخدم دورًا سريعًا.",
     phase2:
       "خارطة الطريق للمرحلة 2 (خارج هذا البناء): نماذج تعلم آلي مدرّبة، لجنة خبراء دلفى، خدمات مصغّرة، قاعدة متجهات مؤسسية، مصادقة متعددة العوامل المادية / اعتماد قانوني، بنية WebSocket.",
   },
@@ -566,6 +888,102 @@ const ar: Dictionary = {
     editBefore: "عدّل قبل الموافقة",
     approve: "موافقة → نشر",
     saveEdit: "حفظ التعديل والموافقة",
+  },
+  laws: {
+    title: "القوانين والتنظيمات",
+    subtitle: "ابحث عن القوانين والمراسيم المتعلقة بالاستثمار",
+    searchPlaceholder: "ابحث عن قانون…",
+    filterAll: "الكل",
+    filterInvestment: "قوانين الاستثمار",
+    filterTax: "قوانين الضرائب",
+    filterTrade: "قوانين التجارة",
+    filterEnergy: "قوانين الطاقة",
+    typeLaw: "قانون",
+    typeDecree: "مرسوم",
+    typeOrdinance: "أمر",
+    readMore: "قراءة المزيد",
+    save: "حفظ",
+    empty: "لا توجد قوانين مطابقة للتصفية.",
+  },
+  experts: {
+    title: "الخبراء",
+    subtitle: "استشر خبراء في مجالات متعددة",
+    searchPlaceholder: "ابحث عن خبير…",
+    fieldAll: "الكل",
+    fieldEconomy: "اقتصاد",
+    fieldBusiness: "أعمال",
+    fieldEducation: "تعليم",
+    fieldEngineering: "هندسة",
+    fieldFinance: "مالية",
+    fieldLaw: "قانون",
+    fieldMedicine: "طب",
+    fieldTechnology: "تكنولوجيا",
+    years: "+{n} سنوات",
+    free: "مجاني",
+    paid: "مدفوع",
+    contact: "تواصل",
+    contactTitle: "طلب استشارة",
+    messageLabel: "الرسالة",
+    messagePlaceholder: "صف احتياج الإحاطة…",
+    send: "إرسال الطلب",
+    sent: "تم تسجيل الطلب (عرض تجريبي). سيُخطَّر الخبير.",
+    empty: "لا يوجد خبراء في هذا المجال بعد.",
+    contactLocked:
+      "التواصل مع الخبراء يتطلب Professionnel أو Premium. رقِّ الاشتراك من الإعدادات ← الخطة والفوترة.",
+  },
+  pricing: {
+    title: "الخطة والفوترة",
+    subtitle: "اختر باقة وصول ذاتية الخدمة لهذا العرض.",
+    monthly: "شهري",
+    yearly: "سنوي",
+    saveYearly: "−شهران",
+    perMonth: "/ شهر · بدون ضريبة",
+    perYear: "/ سنة · بدون ضريبة",
+    recommended: "موصى به",
+    subscribe: "اشترك (دفع تجريبي)",
+    currentPlan: "الباقة الحالية",
+    processing: "جارٍ المعالجة…",
+    activated: "تم تفعيل باقة {plan} (دفع تجريبي).",
+    payError: "تعذّر إتمام الدفع.",
+    demoPayNote:
+      "دفع تجريبي فقط — بلا بطاقة حقيقية. جاهز للربط مع CIB / Stripe لاحقًا.",
+    upgradeHint: "رقِّ الباقة",
+    starter: "Starter",
+    professionnel: "Professionnel",
+    premium: "Premium",
+    starterBlurb: "محلل فردي — لوحة القيادة وكتالوج القوانين",
+    professionnelBlurb: "فرق — سيناريوهات وتواصل خبراء ودعم أولوية",
+    premiumBlurb: "مؤسسي — طبقة سرية وإدارة محتوى ومقاعد أوسع",
+    featDashboard: "لوحة العمليات والبث المباشر",
+    featSearch: "البحث الدلالي (RAG)",
+    featLaws: "كتالوج القوانين والتنظيمات",
+    featExpertsView: "دليل الخبراء",
+    featExpertsContact: "تواصل / طلبات استشارة",
+    featScenarios: "منشئ سيناريوهات ماذا لو",
+    featMatrix: "مصفوفة التأثيرات المتقاطعة",
+    featClassified: "طبقة خريطة سرية",
+    featAdmin: "إدارة المحتوى والاستيعاب",
+    featSupport: "دعم إحاطة بأولوية",
+    featSeats: "حتى {n} مقاعد",
+  },
+  settings: {
+    title: "الإعدادات",
+    subtitle: "السمة واللغة والخطة والفوترة لمساحة العرض هذه.",
+    tabGeneral: "عام",
+    tabBilling: "الخطة والفوترة",
+    themeTitle: "السمة",
+    themeDesc: "الوضع الداكن لغرفة العمليات افتراضي؛ الفاتح للبيئات المضيئة.",
+    themeDark: "داكن",
+    themeLight: "فاتح",
+    languageTitle: "اللغة",
+    languageDesc: "لغة الواجهة (العربية تفعّل اتجاه RTL).",
+    densityTitle: "الكثافة",
+    densityDesc: "تباعد القوائم والبطاقات.",
+    densityComfortable: "مريح",
+    densityCompact: "مضغوط",
+    comingSoon: "الوضع المضغوط في إصدار لاحق.",
+    billingTitle: "الخطة والفوترة",
+    billingDesc: "أدِر باقة الاشتراك والدفع التجريبي.",
   },
   language: "اللغة",
 };

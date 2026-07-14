@@ -84,7 +84,7 @@ export function AlgeriaMap({
       </CardHeader>
       <CardContent>
         {!filtered ? (
-          <div className="h-[480px] flex items-center justify-center text-slate-500 text-sm bg-ink-950/60 rounded-md border border-white/5">
+          <div className="h-64 sm:h-80 lg:h-[480px] flex items-center justify-center text-slate-500 text-sm bg-ink-950/60 rounded-md border border-white/5">
             {t.dashboard.loadingMap}
           </div>
         ) : (

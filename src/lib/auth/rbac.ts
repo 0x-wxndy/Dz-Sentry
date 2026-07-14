@@ -27,6 +27,15 @@ export const DEMO_USERS: DemoUser[] = [
   },
 ];
 
+/** Shared demo password for all test accounts */
+export const DEMO_PASSWORD = "demo1234";
+
+export function findDemoUserByEmail(email: string): DemoUser | undefined {
+  return DEMO_USERS.find(
+    (u) => u.email.toLowerCase() === email.trim().toLowerCase()
+  );
+}
+
 export const ROLE_ACCESS: Record<
   UserRole,
   {
