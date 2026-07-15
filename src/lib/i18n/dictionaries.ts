@@ -3,6 +3,8 @@ import type { Locale } from "./config";
 export type Dictionary = {
   brand: {
     tagline: string;
+    siteTitle: string;
+    siteDescription: string;
     headerDemo: string;
     session: string;
     demoIdentity: string;
@@ -38,15 +40,13 @@ export type Dictionary = {
   };
   login: {
     subtitle: string;
-    demoSession: string;
-    demoSessionDesc: string;
+    title: string;
+    description: string;
     email: string;
     password: string;
     signIn: string;
     quickPick: string;
-    autofillHint: string;
     invalidCreds: string;
-    phase2: string;
   };
   dashboard: {
     title: string;
@@ -236,6 +236,9 @@ export type Dictionary = {
 const en: Dictionary = {
   brand: {
     tagline: "Situation Room",
+    siteTitle: "Official Data Analysis Platform",
+    siteDescription:
+      "Official data analysis platform for the Algerian market",
     headerDemo: "ALG | GEOINT DEMO",
     session: "Session",
     demoIdentity: "Demo identity",
@@ -270,19 +273,14 @@ const en: Dictionary = {
     red: "red",
   },
   login: {
-    subtitle:
-      "Strategic intelligence briefing prototype for Algeria. Use a demo account below — credentials autofill for testing.",
-    demoSession: "Demo login",
-    demoSessionDesc:
-      "Pick a test persona to autofill email & password, then sign in",
+    subtitle: "Strategic intelligence platform for Algeria",
+    title: "Sign in",
+    description: "Enter your credentials to access DZ-Sentry",
     email: "Email",
     password: "Password",
     signIn: "Sign in",
-    quickPick: "Quick-fill test roles",
-    autofillHint: "Click a role to fill the form",
-    invalidCreds: "Unknown demo credentials. Use a quick-fill role.",
-    phase2:
-      "Phase 2 roadmap (not in this build): trained ML models, Delphi expert panel, microservices, enterprise vector DB, hardware MFA / legal certification, WebSocket infra.",
+    quickPick: "Test accounts",
+    invalidCreds: "Invalid email or password.",
   },
   dashboard: {
     title: "Operations Dashboard",
@@ -488,6 +486,9 @@ const en: Dictionary = {
 const fr: Dictionary = {
   brand: {
     tagline: "Salle de situation",
+    siteTitle: "Plateforme d'analyse des données officielles",
+    siteDescription:
+      "Plateforme d'analyse des données officielles pour le marché algérien",
     headerDemo: "ALG | GEOINT DÉMO",
     session: "Session",
     demoIdentity: "Identité démo",
@@ -522,19 +523,14 @@ const fr: Dictionary = {
     red: "rouge",
   },
   login: {
-    subtitle:
-      "Prototype de briefing en renseignement stratégique pour l'Algérie. Utilisez un compte démo — identifiants préremplis pour les tests.",
-    demoSession: "Connexion démo",
-    demoSessionDesc:
-      "Choisissez un persona test pour remplir email & mot de passe, puis connectez-vous",
+    subtitle: "Plateforme de renseignement stratégique pour l'Algérie",
+    title: "Connexion",
+    description: "Saisissez vos identifiants pour accéder à DZ-Sentry",
     email: "E-mail",
     password: "Mot de passe",
     signIn: "Se connecter",
-    quickPick: "Rôles test (remplissage auto)",
-    autofillHint: "Cliquez un rôle pour remplir le formulaire",
-    invalidCreds: "Identifiants démo inconnus. Utilisez un rôle rapide.",
-    phase2:
-      "Feuille de route Phase 2 (hors périmètre) : modèles ML entraînés, panel Delphi, microservices, base vectorielle entreprise, MFA matériel / certification juridique, infra WebSocket.",
+    quickPick: "Comptes test",
+    invalidCreds: "E-mail ou mot de passe invalide.",
   },
   dashboard: {
     title: "Tableau de bord opérationnel",
@@ -740,6 +736,8 @@ const fr: Dictionary = {
 const ar: Dictionary = {
   brand: {
     tagline: "غرفة العمليات",
+    siteTitle: "منصة تحليل البيانات الرسمية",
+    siteDescription: "منصة تحليل البيانات الرسمية للسوق الجزائري",
     headerDemo: "الجزائر | هندسة استخباراتية تجريبية",
     session: "الجلسة",
     demoIdentity: "هوية العرض",
@@ -774,19 +772,14 @@ const ar: Dictionary = {
     red: "أحمر",
   },
   login: {
-    subtitle:
-      "نموذج أولي لإحاطة استخباراتية استراتيجية للسوق الجزائرية. استخدم حسابًا تجريبيًا — تُملأ بيانات الدخول تلقائيًا للاختبار.",
-    demoSession: "تسجيل دخول تجريبي",
-    demoSessionDesc:
-      "اختر شخصية اختبار لملء البريد وكلمة المرور، ثم سجّل الدخول",
+    subtitle: "منصة تحليل البيانات الرسمية",
+    title: "تسجيل الدخول",
+    description: "أدخل بيانات الاعتماد للوصول إلى DZ-Sentry",
     email: "البريد الإلكتروني",
     password: "كلمة المرور",
     signIn: "تسجيل الدخول",
-    quickPick: "أدوار اختبار (تعبئة تلقائية)",
-    autofillHint: "انقر دورًا لملء النموذج",
-    invalidCreds: "بيانات تجريبية غير معروفة. استخدم دورًا سريعًا.",
-    phase2:
-      "خارطة الطريق للمرحلة 2 (خارج هذا البناء): نماذج تعلم آلي مدرّبة، لجنة خبراء دلفى، خدمات مصغّرة، قاعدة متجهات مؤسسية، مصادقة متعددة العوامل المادية / اعتماد قانوني، بنية WebSocket.",
+    quickPick: "حسابات اختبار",
+    invalidCreds: "البريد الإلكتروني أو كلمة المرور غير صحيحة.",
   },
   dashboard: {
     title: "لوحة العمليات",

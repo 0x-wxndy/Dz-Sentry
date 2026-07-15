@@ -3,9 +3,7 @@
   command = "npm run build"
   publish = ".next"
 
-[functions]
-  # Gemini synthesis needs headroom beyond the default ~10s on some plans
-  timeout = 26
-
 [build.environment]
   NODE_VERSION = "20"
+  # Config values (not credentials) that appear in source / bundled output
+  SECRETS_SCAN_OMIT_KEYS = "GEMINI_MODEL,LLM_PROVIDER"

@@ -12,9 +12,11 @@ Client-facing **strategic / geopolitical intelligence** prototype for the Algeri
 
 ## Quick start
 
+**Requirements:** Node.js **20+** and npm (install from [nodejs.org](https://nodejs.org/)).
+
 ```bash
 npm install
-npm run ingest          # index sample docs in data/source-documents
+npm run ingest          # index sample docs in data/source-documents (first run)
 npm run dev             # http://localhost:3000
 ```
 
@@ -87,3 +89,68 @@ After changing env vars, redeploy or the old process keeps empty/`undefined` key
 ## Phase 2 (explicitly out of scope)
 
 Trained ML, Delphi expert panel, microservices, Pinecone/Weaviate Enterprise, hardware MFA / legal certification, WebSocket infra.
+
+---
+
+## النسخة العربية
+
+### منصة تحليل البيانات الرسمية
+
+نموذج أولي **للاستخبارات الاستراتيجية / الجيوسياسية** موجّه للسوق الجزائرية. واجهة غرفة عمليات داكنة مع وحدات تفاعلية حقيقية. تدريب نماذج التعلم الآلي والخدمات المصغّرة والتصلّب المؤسسي خارج نطاق هذا الإصدار (المرحلة 2).
+
+### التشغيل السريع
+
+**المتطلبات:** Node.js **20+** و npm ([nodejs.org](https://nodejs.org/)).
+
+```bash
+npm install
+npm run ingest          # فهرسة المستندات النموذجية (أول تشغيل)
+npm run dev             # http://localhost:3000
+```
+
+
+افتح `/login`، اختر حساب اختبار أو سجّل الدخول:
+
+| الدور | الصلاحيات |
+|------|-----------|
+| Standard | لوحة التحكم، البحث، المصفوفة |
+| VVIP | + محاكاة السيناريوهات |
+| Sovereign | + طبقة الخريطة المصنّفة |
+| Admin | + رفع المستندات وقائمة التحقق |
+
+### اللغات
+
+الواجهة متوفرة بـ **الفرنسية** (افتراضي)، **العربية** (من اليمين لليسار)، و**الإنجليزية**. مبدّل اللغة في صفحة الدخول أو الشريط الجانبي.
+
+### الوحدات
+
+1. **لوحة التحكم** — بطاقات المخاطر، خريطة الجزائر، بث مباشر
+2. **البحث الدلالي** — استعلام باللغة الطبيعية، مقاطع مرتبة، تلخيص بالذكاء الاصطناعي مع مراجع
+3. **ماذا لو** — منزلقات → إعادة حساب فورية
+4. **مصفوفة التأثير المتقاطع** — سرديات محاكاة
+5. **إدارة المحتوى** — رفع → فهرسة → اعتماد الملخصات
+6. **الصلاحيات** — مصادقة تجريبية (قابلة للاستبدال بـ Supabase لاحقًا)
+
+### المستندات (الوحدة 2)
+
+ضع ملفات JORADP (PDF أو `.txt`) في `data/source-documents`، ثم من الإدارة → **إعادة الفهرسة** أو `npm run ingest`.
+
+### متغيرات البيئة (اختياري)
+
+انسخ `.env.example` → `.env.local` لتفعيل Gemini في البحث الدلالي:
+
+```bash
+LLM_PROVIDER=gemini
+GEMINI_API_KEY=your_key_here
+GEMINI_MODEL=gemini-flash-latest
+```
+
+بدون هذه المفاتيح، يعمل التطبيق بالكامل مع تلخيص محلي دون API خارجي.
+
+### Netlify
+
+ملف `.env.local` لا يُنشر. عيّن نفس المتغيرات في **Site configuration → Environment variables** ثم أعد النشر.
+
+### المرحلة 2 (خارج النطاق)
+
+نماذج ML مدرّبة، لجنة خبراء دلفي، خدمات مصغّرة، قواعد متجهات مؤسسية، MFA مادي / اعتماد قانوني، بنية WebSocket.

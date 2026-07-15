@@ -20,9 +20,9 @@ import { cn } from "@/lib/utils";
 export default function LoginPage() {
   const router = useRouter();
   const { t } = useI18n();
-  const [email, setEmail] = useState(DEMO_USERS[0].email);
-  const [password, setPassword] = useState(DEMO_PASSWORD);
-  const [activeRole, setActiveRole] = useState<UserRole>(DEMO_USERS[0].role);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [activeRole, setActiveRole] = useState<UserRole | null>(null);
   const [error, setError] = useState("");
   const [busy, setBusy] = useState(false);
 
@@ -59,7 +59,7 @@ export default function LoginPage() {
 
   return (
     <div className="min-h-screen flex items-center justify-center p-4 sm:p-6">
-      <div className="w-full max-w-lg space-y-6 sm:space-y-8">
+      <div className="w-full max-w-md space-y-6 sm:space-y-8">
         <div className="flex justify-end">
           <LanguageSwitcher />
         </div>
@@ -74,16 +74,50 @@ export default function LoginPage() {
 
         <Card className="shadow-glow">
           <CardHeader>
-            <CardTitle>{t.login.demoSession}</CardTitle>
-            <CardDescription>{t.login.demoSessionDesc}</CardDescription>
+            <CardTitle>{t.login.title}</CardTitle>
+            <CardDescription>{t.login.description}</CardDescription>
           </CardHeader>
           <CardContent className="space-y-5">
-            <div>
+            <form onSubmit={signIn} className="space-y-3">
+              <div>
+                <Label htmlFor="email">{t.login.email}</Label>
+                <Input
+                  id="email"
+                  type="email"
+                  autoComplete="username"
+                  className="mt-1.5"
+                  value={email}
+                  onChange={(e) => {
+                    setEmail(e.target.value);
+                    setActiveRole(null);
+                  }}
+                  required
+                />
+              </div>
+              <div>
+                <Label htmlFor="password">{t.login.password}</Label>
+                <Input
+                  id="password"
+                  type="password"
+                  autoComplete="current-password"
+                  className="mt-1.5"
+                  value={password}
+                  onChange={(e) => {
+                    setPassword(e.target.value);
+                    setActiveRole(null);
+                  }}
+                  required
+                />
+              </div>
+              {error && <p className="text-sm text-risk-red">{error}</p>}
+              <Button type="submit" className="w-full" disabled={busy}>
+                {t.login.signIn}
+              </Button>
+            </form>
+
+            <div className="pt-2 border-t border-white/10">
               <p className="text-xs uppercase tracking-wider text-slate-500 mb-2">
                 {t.login.quickPick}
-              </p>
-              <p className="text-[11px] text-slate-500 mb-2">
-                {t.login.autofillHint}
               </p>
               <div className="grid grid-cols-2 gap-2">
                 {DEMO_USERS.map((u) => (
@@ -106,45 +140,8 @@ export default function LoginPage() {
                 ))}
               </div>
             </div>
-
-            <form onSubmit={signIn} className="space-y-3">
-              <div>
-                <Label htmlFor="email">{t.login.email}</Label>
-                <Input
-                  id="email"
-                  type="email"
-                  autoComplete="username"
-                  className="mt-1.5"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
-                />
-              </div>
-              <div>
-                <Label htmlFor="password">{t.login.password}</Label>
-                <Input
-                  id="password"
-                  type="password"
-                  autoComplete="current-password"
-                  className="mt-1.5"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  required
-                />
-              </div>
-              {error && (
-                <p className="text-sm text-risk-red">{error}</p>
-              )}
-              <Button type="submit" className="w-full" disabled={busy}>
-                {t.login.signIn}
-              </Button>
-            </form>
           </CardContent>
         </Card>
-
-        <p className="text-center text-[11px] text-slate-600 leading-relaxed">
-          {t.login.phase2}
-        </p>
       </div>
     </div>
   );

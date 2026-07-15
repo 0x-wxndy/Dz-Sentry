@@ -45,10 +45,12 @@ export function LocaleProvider({
 
   const applyDom = useCallback((next: Locale) => {
     const meta = localeMeta[next];
+    const dict = getDictionary(next);
     document.documentElement.lang = next;
     document.documentElement.dir = meta.dir;
     document.documentElement.classList.toggle("font-ar", next === "ar");
     document.body.classList.toggle("font-ar", next === "ar");
+    document.title = dict.brand.siteTitle;
   }, []);
 
   useEffect(() => {
